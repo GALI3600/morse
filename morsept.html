@@ -1,0 +1,63 @@
+<html>
+
+<head>
+  <link rel="stylesheet" href="morsept.css">
+  <title>Morse encoder decoder</title>
+</head>
+
+<body>
+  
+  <div class='output' id="decResult"></div>
+  <div id="mainDiv">
+
+    <button style='display:none' id="decBack"></button>
+    <div id="decodeDiv" class='input'>
+      <label for='morsept'>Coloque o código aqui</label>
+      <textarea class='Input-text' id="decCode" name='morsept' placeholder="Código Morse aqui" cols='120'
+        rows="1.8"></textarea>
+
+      <button class="Traduzir" id="decBtn">traduzir</button>
+
+    </div>
+  </div>
+  <script>
+
+
+    window.onload = function () {
+      "use strict";
+      var
+
+        decodeEnter = document.getElementById("decodeEnter"),
+
+        decBtn = document.getElementById("decBtn"),
+        decCode = document.getElementById("decCode"),
+        mainDiv = document.getElementById("mainDiv"),
+        decResult = document.getElementById("decResult"),
+        letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", " ", "\n"],
+        symbols = [".-", "-...", "-.-.", "-..", ".", "..-.", "--.", "....", "..", ".---", "-.-", ".-..", "--", "-.", "---", ".--.", "--.-", ".-.", "...", "-", "..-", "...-", ".--", "-..-", "-.--", "--..", "-----", ".----", "..---", "...--", "....-", ".....", "-....", "--...", "---..", "----.", "^", "\n"];
+
+      /// traduzir
+
+      decBack.onclick = function () {
+        hide(decodeDiv);
+        fadeIn(mainDiv);
+      }
+      decBtn.onclick = function () {
+        var code = decCode.value.trim().replace(/_|¯|—|–/g, "-").split(" "),
+          txt = "";
+
+        for (var i in code) {
+          txt += letters[symbols.indexOf(code[i])];
+        }
+        decResult.innerText = txt.replace("undefined", "");
+        fadeIn(decResult);
+      }
+
+    }
+
+
+
+  </script>
+</body>
+
+</html>

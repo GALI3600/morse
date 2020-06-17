@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="ptmorse.css">
+    <title>PTmorse</title>
+</head>
+<body>
+    <h1></h1>
+    <div class="Wrapper">
+      
+      <div class="Input">
+        <input type="text" id="input" class="Input-text" placeholder="Digite um texto de até 35 caractéres em português aqui">
+        <label for="input" class="Input-label">Este texto será traduzido de português para morse:</label>
+      </div>
+    </div>
+
+
+<div class="alinhar">
+   
+
+
+<nav>
+    <ul>
+      <button onclick="botao();" id="butt">traduzir</button>
+     
+     
+    </ul>
+  </nav>
+  <output id='out'></output>
+</div>
+    
+    <script>
+var morse = {
+  a: ". ___ /",
+  b: "___ . . . /",
+  c: "___ . ___ . /",
+  d: "___ . . /",
+  e: ". /" ,
+  f: ". . ___ . /",
+  g: "___ ___ . /",
+  h: ". . . . /",
+  i: ". . /",
+  j: ". ___ ___ ___ ___ /",
+  k: "___ . ___ /",
+  l: ". ___ . . /",
+  m: "___ ___ /",
+  n: "___ . /",
+  o: "___ ___ ___ /",
+  p: ". ___ ___ . /",
+  q: "___ ___ . ___ /",
+  r: ". ___ . /",
+  s: ". . . /",
+  t: "___ /",
+  u: ". . ___ /",
+  v: ". . . ___ /",
+  w: ". ___ ___ /",
+  x: "___ . . ___ /",
+  y: "___ . ___ ___ /",
+  z: "___ ___ . . /",
+  
+  " ": "|", 
+};
+
+var inp = document.getElementById("input");
+var butt = document.getElementById("butt");
+var out = document.getElementById("out");
+
+butt.addEventListener("click", function() {
+  var conv = inp.value;
+  conv = conv.toLowerCase();
+  conv = conv.split("");
+  for (var i = 0; i < conv.length; i++) {
+    conv[i] = morse[conv[i]];
+  }
+  conv = conv.join(" ");
+  console.log(conv);
+  out.innerHTML = conv;
+});
+
+  </script>
+
+
+
+
+
+
+    
+    
+</body>
+</html>
+
+
+
+
+

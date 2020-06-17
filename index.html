@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="inicialcss.css">
+    <title>pagina inicial</title>
+</head>
+
+<body style="overflow:hidden ;">
+    
+    <div class="font">
+    <h1>Bem vindo ao Morse Code Translator</h1>
+
+    <p>Escolha o tipo de tradução</p>
+
+  
+<nav>
+    <ul>
+      <button onclick="botao();" id="ptmorse" href= "ptmorse.html">PT-MORSE</button>
+      <button onclick="botao2();" id="morsept" href= "morsept.html">MORSE-PT</button>
+     
+    </ul>
+  </nav>
+
+</div>
+<script>
+    function botao() {
+var button=document.getElementById('ptmorse');
+window.location.href = 'ptmorse.html';
+    }
+
+   function botao2() {
+var button=document.getElementById('morsept');
+window.location.href = 'morsept.html';
+
+    }
+
+</script>
+</body>
+</html>
